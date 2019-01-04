@@ -76,7 +76,10 @@ def onedata(id):
         
     # DELETE a data
     if request.method == 'DELETE':
-        return 'DELETE '+id
+        delData = User.query.filter_by(id=id).first()
+        db.session.delete(delData)
+        db.session.commit()
+        return jsonify({'status': 'Data '+id+' is deleted from PostgreSQL!'})
 
     # UPDATE a data by id
     if request.method == 'PUT':
