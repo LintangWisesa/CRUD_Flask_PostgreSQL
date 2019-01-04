@@ -44,14 +44,14 @@
 
 #
 
-4. Run the server file. Make sure your PostgreSQL server is still running. Your application server will run locally at __*http://localhost:5000/*__ :
+5. Run the server file. Make sure your PostgreSQL server is still running. Your application server will run locally at __*http://localhost:5000/*__ :
     ```bash
     $ python app.py
     ```
 
 #
 
-5. Give a request to the server. You can use __Postman__ app:
+6. Give a request to the server. You can use __Postman__ app:
     
     __See the opening screen (*home.html*)__
     ```bash
@@ -80,7 +80,7 @@
 
 #
 
-6. Enjoy your code! 😎👌
+7. Enjoy your code! 😎👌
 
 #
 
