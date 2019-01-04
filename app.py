@@ -83,7 +83,14 @@ def onedata(id):
 
     # UPDATE a data by id
     if request.method == 'PUT':
-        return 'PUT '+id
+        body = request.json
+        newName = body['name']
+        newAge = body['age']
+        editData = User.query.filter_by(id=id).first()
+        editData.name = newName
+        editData.age = newAge
+        db.session.commit()
+        return jsonify({'status': 'Data '+id+' is updated from PostgreSQL!'})
 
 if __name__ == '__main__':
     app.debug = True
