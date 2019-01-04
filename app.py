@@ -47,7 +47,18 @@ def data():
     
     # GET all data from database
     if request.method == 'GET':
-        return 'GET'
+        data = User.query.all()
+        print(data)
+        dataJson = []
+        for i in range(len(data)):
+            # print(str(data[i]).split('/'))
+            dataDict = {
+                'id': str(data[i]).split('/')[0],
+                'name': str(data[i]).split('/')[1],
+                'age': str(data[i]).split('/')[2]
+            }
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
 
 if __name__ == '__main__':
     app.debug = True
