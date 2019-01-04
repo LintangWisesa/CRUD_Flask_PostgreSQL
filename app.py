@@ -60,6 +60,28 @@ def data():
             dataJson.append(dataDict)
         return jsonify(dataJson)
 
+@app.route('/data/<string:id>', methods=['GET', 'DELETE', 'PUT'])
+def onedata(id):
+
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = User.query.get(id)
+        print(data)
+        dataDict = {
+            'id': str(data).split('/')[0],
+            'name': str(data).split('/')[1],
+            'age': str(data).split('/')[2]
+        }
+        return jsonify(dataDict)
+        
+    # DELETE a data
+    if request.method == 'DELETE':
+        return 'DELETE '+id
+
+    # UPDATE a data by id
+    if request.method == 'PUT':
+        return 'PUT '+id
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
