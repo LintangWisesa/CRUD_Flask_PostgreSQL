@@ -47,7 +47,8 @@ def data():
     
     # GET all data from database
     if request.method == 'GET':
-        data = User.query.all()
+        # data = User.query.all()
+        data = User.query.order_by(User.id).all()
         print(data)
         dataJson = []
         for i in range(len(data)):
