@@ -45,7 +45,7 @@ def data():
             'age': age
         })
     
-    # GET all data from database
+    # GET all data from database & sort by id
     if request.method == 'GET':
         # data = User.query.all()
         data = User.query.order_by(User.id).all()
