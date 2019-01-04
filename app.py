@@ -26,6 +26,29 @@ class User(db.Model):
 def index():
     return render_template('home.html')
 
+@app.route('/data', methods=['POST', 'GET'])
+def data():
+    
+    # POST a data to database
+    if request.method == 'POST':
+        body = request.json
+        name = body['name']
+        age = body['age']
+
+        data = User(name, age)
+        db.session.add(data)
+        db.session.commit()
+
+        return jsonify({
+            'status': 'Data is posted to PostgreSQL!',
+            'name': name,
+            'age': age
+        })
+    
+    # GET all data from database
+    if request.method == 'GET':
+        return 'GET'
+
 if __name__ == '__main__':
     app.debug = True
     app.run()

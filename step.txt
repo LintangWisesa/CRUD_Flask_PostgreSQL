@@ -16,5 +16,6 @@
                  );
     lin_flask=#  \d
 
-4.                 
+4. run server
+    $ python app.py    
                  
