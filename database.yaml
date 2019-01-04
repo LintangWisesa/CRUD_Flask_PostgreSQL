@@ -1,0 +1,1 @@
+uri: 'postgresql://postgres:12345@localhost/lin_flask'

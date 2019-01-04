@@ -1,0 +1,20 @@
+1. Activate PostgreSQL server:
+    $ cd C:\Program Files\PostgreSQL\10\bin
+    $ psql -U postgres
+      Password for user postgres: 12345
+
+2. Create 'lin_flask' database:
+    postgres=#  CREATE DATABASE lin_flask;
+    postgres=#  \l 
+    postgres=#  \c lin_flask
+
+3. Create 'users' table on 'lin_flask' database:
+    lin_flask=#  CREATE TABLE users(
+                 id SERIAL PRIMARY KEY,
+                 name VARCHAR(255),
+                 age VARCAR(255)
+                 );
+    lin_flask=#  \d
+
+4.                 
+                 
