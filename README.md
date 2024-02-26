@@ -28,7 +28,7 @@
     lin_flask=#  CREATE TABLE users(
                  id SERIAL PRIMARY KEY,
                  name VARCHAR(255),
-                 age VARCAR(255)
+                 age VARCHAR(255)
                  );
     lin_flask=#  \d
     ``` 
